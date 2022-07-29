@@ -1,0 +1,22 @@
+<div class="main-container">
+    <app-header 
+        class="header-container"
+        [location]="'User Compare'"
+        [targetNavigation]="'user'"
+        (navigate)="navigate($event)">
+    </app-header>
+    <div class="companyInfo-container">
+        <h1>{{ opportunityInfo?.name }}</h1>
+        <p>{{ opportunityInfo?.job }}</p>
+    </div>
+    <div class="autocomplete-container">
+        <h5>Select a person and compare them against the previously selected user to check who would be a better match for this role:</h5>
+        <app-searchbar-people 
+            class="autocomplete"
+            (searchPeople)="searchPeople($event)"
+            (navigateProfile)="compareProfile($event)"
+            [peopleFound]="peopleFound"
+            [errorFindingPeople]="errorFindingPeople">
+        </app-searchbar-people>
+    </div>
+</div>

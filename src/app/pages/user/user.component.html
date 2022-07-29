@@ -1,0 +1,38 @@
+<div class="main-container">
+    <app-header 
+        [location]="'User'"
+        (navigate)="navigate($event)">
+    </app-header>
+
+    <div class="profile-container">
+        <app-user-info [personData]="personData"></app-user-info>
+        <div class="skills-container">
+            <p>Skills of {{ personData?.name }}: </p>
+            <div class="skills-container__list">
+                <app-chip
+                    *ngFor="let skill of personData?.skills" 
+                    [text]="skill.name">
+                </app-chip>
+            </div>
+        </div>
+        <div class="skills-container">
+            <p>Oportunities that might interest {{ personData?.name }}: </p>
+            <div class="opportunities-container">
+                <div
+                    *ngFor="let opp of opportunities" 
+                    class="opportunities-container__item">
+                    <div class="opportunities-container__item__data">
+                        <small>Job: {{ opp.job }}</small>
+                        <small>Company: {{ opp.name }}</small>
+                    </div>
+                    <button 
+                        mat-raised-button
+                        color="primary"
+                        (click)="compareOpportunity(opp)">
+                        Compare
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

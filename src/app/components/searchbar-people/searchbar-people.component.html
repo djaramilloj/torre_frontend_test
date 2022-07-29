@@ -1,0 +1,22 @@
+<div class="autocomplete-container">
+    <input 
+        class="autocomplete-container__input"
+        type="text" 
+        placeholder="John Doe"
+        [(ngModel)]="searchText"
+        [ngModelOptions]="{standalone: true}"
+        (ngModelChange)="search()">
+    <mat-progress-bar id="loading-bar" mode="indeterminate" *ngIf="loadingData"></mat-progress-bar>
+    <div 
+        *ngIf="showRecommendations"
+        class="autocomplete-container__options">
+        <div 
+            *ngFor="let person of peopleFound"
+            class="autocomplete-container__options__item"
+            (click)="navigateProfileInfo(person)">
+            <p>Name: {{person.name}}</p>
+            <p>Username: {{person.username}}</p>
+        </div>
+    </div>
+    <h5 id="error-msg" *ngIf="errorFindingPeople">WE HAD AN ERROR FINDING PEOPLE BY NAME</h5>
+</div>

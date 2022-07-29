@@ -1,0 +1,10 @@
+<div class="main-container">
+    <h3>Search people by name in Torre (and select an option from dropdown):</h3>
+    <app-searchbar-people 
+        class="autocomplete"
+        (searchPeople)="searchPeople($event)"
+        (navigateProfile)="navigateProfile($event)"
+        [peopleFound]="peopleFound"
+        [errorFindingPeople]="errorFindingPeople">
+    </app-searchbar-people>
+</div>

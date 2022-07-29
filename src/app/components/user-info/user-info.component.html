@@ -1,0 +1,11 @@
+<div class="main-container">
+    <div class="image-container">
+        <img 
+            class="yes-pic"
+            *ngIf="personData?.photo"
+            [src]="personData?.photo" 
+            alt="profile image">
+    </div>
+    <p id="highlighted">{{ personData?.name }}</p>
+    <small>{{ personData?.username }}</small>
+</div>

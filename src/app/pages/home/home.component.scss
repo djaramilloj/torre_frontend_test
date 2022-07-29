@@ -1,0 +1,13 @@
+@import './src/styles/common';
+
+.main-container {
+    @include fullWidthHeight();
+    @include flexCenter();
+    flex-direction: column;
+    h3 {
+        text-align: center;
+    }
+}
+.autocomplete {
+    width: 100%;
+}
