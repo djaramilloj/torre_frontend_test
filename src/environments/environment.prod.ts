@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  uri: 'http://localhost:5001'
+  uri: 'https://torre-backend-test-2022.herokuapp.com'
 };
